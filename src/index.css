@@ -1,6 +1,221 @@
  
-:root { --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; /* Spacing system */ --space-1: 6px; --space-2: 10px; --space-3: 14px; --space-4: 18px; --space-5: 24px; --space-6: 32px; --space-7: 44px; --space-8: 64px; /* Radius */ --r-sm: 10px; --r-md: 14px; --r-lg: 18px; /* Shadows (subtle) */ --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.06); --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08); /* Animation */ --ease: cubic-bezier(0.2, 0.8, 0.2, 1); --dur-fast: 180ms; --dur-med: 260ms; --dur-slow: 420ms; /* Layout */ --container: 1120px; --nav-h: 64px; /* Brand accent (subtle, not neon) */ --accent: #2f6fed; --accent-2: #12b981; /* Default theme (light) */ --bg: #ffffff; --bg-2: #f6f7fb; --card: #ffffff; --text: #0b1220; --muted: #52607a; --muted-2: #6b7a96; --border: rgba(11, 18, 32, 0.12); --border-2: rgba(11, 18, 32, 0.08); --focus: rgba(47, 111, 237, 0.25); } *::before, *::after { box-sizing: border-box; } html, body { height: 100%; } html { scroll-behavior: smooth; } body { margin: 0; font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height: 1.55; letter-spacing: -0.01em; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } 
-/* ========================= CSS VARIABLES ========================= */
+/* ========================= FONT STACKS ========================= */
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+
+  /* ========================= SPACING ========================= */
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 44px;
+  --space-8: 64px;
+
+  /* ========================= RADIUS ========================= */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-xl: 24px;      /* added for larger cards */
+  --r-full: 999px;   /* added for pills/badges */
+
+  /* ========================= SHADOWS ========================= */
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 55px rgba(0, 0, 0, 0.12);  /* added for hover cards */
+
+  /* ========================= ANIMATION ========================= */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 180ms;
+  --dur-med: 260ms;
+  --dur-slow: 420ms;
+
+  /* ========================= LAYOUT ========================= */
+  --container: 1120px;
+  --container-sm: 720px;   /* added for narrow content like CTAs */
+  --nav-h: 64px;
+
+  /* ========================= BRAND ACCENT ========================= */
+  --accent: #2f6fed;
+  --accent-soft: rgba(47, 111, 237, 0.14);
+  --accent-2: #12b981;
+  --accent-2-soft: rgba(18, 185, 129, 0.14);
+
+  /* ========================= LIGHT THEME (default) ========================= */
+  --bg: #ffffff;
+  --bg-2: #f6f7fb;
+  --card: #ffffff;
+  --text: #0b1220;
+  --muted: #52607a;
+  --muted-2: #6b7a96;
+  --border: rgba(11, 18, 32, 0.12);
+  --border-2: rgba(11, 18, 32, 0.08);
+  --focus: rgba(47, 111, 237, 0.25);
+}
+
+/* ========================= RESET ========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent font size inflation on mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent horizontal scroll bleed */
+  overflow-x: hidden;
+}
+
+/* ========================= TYPOGRAPHY BASE ========================= */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity var(--dur-fast) var(--ease);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ========================= FOCUS STYLES (ACCESSIBILITY) ========================= */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+/* ========================= IMAGES & MEDIA ========================= */
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========================= LISTS ========================= */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ========================= CONTAINER UTILITY ========================= */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.container-sm {
+  width: 100%;
+  max-width: var(--container-sm);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* ========================= RESPONSIVE SPACING ========================= */
+
+/* Tablet — 768px */
+@media (max-width: 768px) {
+  :root {
+    --space-6: 24px;   /* tighten large gaps on tablet */
+    --space-7: 32px;
+    --space-8: 48px;
+    --nav-h: 58px;
+  }
+
+  .container,
+  .container-sm {
+    padding-inline: var(--space-3);
+  }
+}
+
+/* Mobile — 540px */
+@media (max-width: 540px) {
+  :root {
+    --space-5: 18px;   /* tighten mid gaps on mobile */
+    --space-6: 20px;
+    --space-7: 28px;
+    --space-8: 40px;
+    --nav-h: 54px;
+    --r-lg: 14px;      /* soften large radii on small screens */
+    --r-xl: 18px;
+  }
+
+  .container,
+  .container-sm {
+    padding-inline: var(--space-2);
+  }
+}
+
+/* Extra Small — 360px */
+@media (max-width: 360px) {
+  :root {
+    --space-4: 14px;
+    --space-5: 16px;
+    --space-6: 18px;
+    --space-7: 24px;
+    --space-8: 32px;
+    --nav-h: 52px;
+    --r-md: 11px;
+    --r-lg: 13px;
+    --r-xl: 16px;
+  }
+
+  .container,
+  .container-sm {
+    padding-inline: var(--space-2);
+  }
+}
+
+/* ========================= REDUCED MOTION ========================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 :root {
   --bg: #0b0f19;
   --text: #ffffff;
