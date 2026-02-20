@@ -62,25 +62,6 @@
   --focus: rgba(47, 111, 237, 0.25);
 }
 
-/* Dark theme */
-:root[data-theme="dark"] {
-  --bg: #0b0f19;
-  --bg-2: #0f1626;
-  --card: #0f1626;
-
-  --text: #eaf0ff;
-  --muted: #a8b4cc;
-  --muted-2: #94a3bf;
-
-  --border: rgba(234, 240, 255, 0.12);
-  --border-2: rgba(234, 240, 255, 0.08);
-
-  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.35);
-
-  --focus: rgba(47, 111, 237, 0.28);
-}
-
 *,
 *::before,
 *::after {
@@ -122,18 +103,6 @@ body {
   --accent-soft: rgba(124, 58, 237, 0.16);
 }
 
-/* Light theme support (optional but recommended) */
-html[data-theme="light"] {
-  --bg: #f7f7fb;
-  --text: #0b0f19;
-  --muted: rgba(11, 15, 25, 0.70);
-
-  --card: rgba(11, 15, 25, 0.05);
-  --border: rgba(11, 15, 25, 0.10);
-
-  --accent: #7c3aed;
-  --accent-soft: rgba(124, 58, 237, 0.14);
-}
 
 body {
   background: var(--bg);
