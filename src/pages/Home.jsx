@@ -232,7 +232,7 @@ export default function Home() {
     </section>
 
 
-    <section id="skills">
+    <section id="skills ">
 <div className="skills-section ">
   <h2 className="skills-title">Skills</h2>
 
