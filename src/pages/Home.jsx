@@ -232,9 +232,9 @@ export default function Home() {
     </section>
 
 
-    <section id="skills ">
-<div className="skills-section ">
-  <h2 className="skills-title">Skills</h2>
+   <section id="skills" className="section skills">
+  <div className="skills-section">
+    <h2 className="skills-title">Skills</h2>
 
   <div className="skills-train-wrapper">
   {/* ===== Train 1: Frontend ===== */}
