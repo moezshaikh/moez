@@ -276,11 +276,11 @@ html[data-theme="light"] .navbar {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   padding: 8px;
   border-radius: 999px;
   background: var(--card);
-  border: 1px solid var(--border);
+  border: 1px solid #000;
 }
 
 .nav-link {
@@ -416,7 +416,6 @@ html[data-theme="light"] .mobile-panel {
   margin: 0 auto;
   padding: 12px 14px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   display: flex;
