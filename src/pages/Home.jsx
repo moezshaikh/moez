@@ -201,7 +201,7 @@ export default function Home() {
               </a>
 
               <a
-  href="/Moez_Shaikh_Resume.pdf"
+  href="/Moez_Software_Dev_Resume.pdf"
   className="social-btn resume-btn"
   aria-label="Download Resume"
   download
